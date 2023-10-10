@@ -112,7 +112,7 @@ body {
   width: 100%;
 }
 .main .offers__text-p {
-  padding: 1em 0;
+  padding: 0.5em 0;
   font-size: 1.2rem;
 }
 .main .offers__cards {
@@ -182,6 +182,71 @@ body {
 .main .offers__card--three .offers__card-desc {
   font-size: 1rem;
 }
+.main .team__card-border, .main .team__card-img {
+  border-radius: 50%;
+}
+.main .team__card-border {
+  margin: 2em auto;
+  width: 250px;
+  height: 250px;
+  border: 9px solid #20f255;
+  overflow: hidden;
+}
+.main .team__card-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #404040;
+}
+.main .team__card-bg:hover > .team__card-img {
+  width: 100%;
+}
+.main .team__card-img {
+  width: 77%;
+  transition: width 0.3s;
+  cursor: pointer;
+}
+.main .team__card-text {
+  margin: 1em 0;
+  text-align: center;
+}
+.main .team__card-name, .main .team__card-branch {
+  font-weight: bold;
+}
+.main .team__card-name {
+  font-size: 2rem;
+}
+.main .team__card-branch {
+  margin: 0.5em;
+  font-size: 1.1rem;
+}
+.main .team__card-aboutme {
+  font-size: 1.1rem;
+  font-weight: 100;
+  font-family: "Ubuntu";
+}
+.main .team__card-media {
+  margin: 2em auto 5em auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  background-color: #1a1a1a;
+  border: 2px solid #20f255;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.main .team__card-media a {
+  padding: 0.5em;
+  transition: background-color 0.3s;
+}
+.main .team__card-media a:hover {
+  background-color: #20f255;
+}
+.main .team__card-media img {
+  width: 30px;
+}
 
 img {
   width: 30px;
@@ -247,9 +312,28 @@ img {
     grid-column: 1/2;
   }
   .main .offers__card--two {
+    grid-row: 1/2;
     grid-column: 2/3;
   }
   .main .offers__card--three {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+  .main .team__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1em;
+  }
+  .main .team__card:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main .team__card:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .main .team__card:nth-child(3) {
     grid-row: 2/3;
     grid-column: 1/3;
   }
@@ -264,5 +348,21 @@ img {
   }
   .main .offers__card--three .offers__card-desc {
     margin: 0;
+  }
+  .main .team__box {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .main .team__card:nth-child(1), .main .team__card:nth-child(2), .main .team__card:nth-child(3) {
+    grid-row: 1/2;
+  }
+  .main .team__card:nth-child(1) {
+    grid-column: 1/2;
+  }
+  .main .team__card:nth-child(2) {
+    grid-column: 2/3;
+  }
+  .main .team__card:nth-child(3) {
+    grid-column: 3/4;
   }
 }/*# sourceMappingURL=style.css.map */
