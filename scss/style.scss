@@ -15,20 +15,45 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-family: 'Ubuntu', sans-serif;
 	background-color: $black;
+	color: $white;
 }
 
 // Main Classes
 .wrapper {
+	padding: 2em;
 	margin: 0 auto;
 	max-width: 1200px;
 	width: 100%;
+}
+
+.fw-bold {
+	font-weight: bold;
+}
+
+.btn {
+	margin: 2em 0;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: $black;
+	border: 2px solid transparent;
+	background-color: $green;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 0.9rem;
+	border-radius: 2px;
+	transition: color 0.5s, background-color 0.5s, border 0.5s;
+	&:hover {
+		background-color: $darkblack;
+		color: $white;
+		border: 2px solid $green;
+	}
 }
 
 // HEADER
 .header {
 	display: flex;
 	align-items: flex-start;
-	padding: 3em;
 	min-height: 400px;
 	height: 100dvh;
 	background-image: url('../img/header.jpg');
@@ -49,13 +74,46 @@ body {
 	}
 }
 
-img {
-	width: 30dvw;
+.main {
+	&__title {
+		font-size: 1.5rem;
+	}
+	.advisory {
+		padding: 1em 0;
+		&__box {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			gap: 2em;
+		}
+		&__img {
+			margin: 1em 0;
+			img {
+				width: 35px;
+				padding: 0.3em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50px;
+				background-color: $green;
+			}
+		}
+		&__text {
+			font-family: 'Open Sans';
+		}
+	}
+	.gallery {
+		&__img {
+			width: 100%;
+		}
+	}
 }
 
-// SPECIAL MEDIA
-
-// Fold devices
+img {
+	width: 30px;
+}
+// ---- SPECIAL MEDIA ----
+// + Fold devices
 @media (max-width: 700px) and (max-height: 330px) {
 	.header {
 		background-position: top;
@@ -63,15 +121,14 @@ img {
 		min-height: 100dvh;
 	}
 }
-
-// Normal devices
+// + Normal devices
 @media (min-height: 700px) {
 	.header {
 		align-items: center;
 		max-height: 700px;
 	}
 }
-// End of SPECIAL MEDIA
+// ---- End of SPECIAL MEDIA ----
 
 @media (min-width: 576px) {
 	.header {
@@ -86,10 +143,39 @@ img {
 			width: 300px;
 		}
 	}
+	.main {
+		.advisory {
+			&__box {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			&__card {
+				width: 45%;
+			}
+		}
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			&__img {
+				height: 280px;
+				object-fit: cover;
+			}
+		}
+	}
 }
 
 @media (min-width: 768px) {
 	.header {
 		align-items: center;
+	}
+	.main {
+		.advisory {
+			&__card {
+				width: 30%;
+			}
+		}
+		.gallery {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 }
