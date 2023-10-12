@@ -46,7 +46,7 @@ body {
   transition: color 0.5s, background-color 0.5s, border 0.5s;
 }
 .btn:hover {
-  background-color: #000;
+  background-color: transparent;
   color: #f2f2f2;
   border: 2px solid #20f255;
 }
@@ -338,6 +338,24 @@ body {
   font-family: "Open Sans";
   text-align: center;
 }
+.footer .contact__error {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  margin: 0.5em 0;
+  transition: opacity 0.2s;
+}
+.footer .contact__error--active {
+  color: #fb3e1d;
+  opacity: 1;
+}
+.footer .contact__error--disabled {
+  color: #20f255;
+  opacity: 1;
+}
+.footer .contact__error-img {
+  margin-right: 0.2em;
+}
 .footer .contact__desc, .footer .contact__phone {
   padding: 1em 0;
 }
@@ -348,10 +366,45 @@ body {
   color: #20f255;
   font-weight: bold;
 }
-.footer .contact input {
+.footer .contact__input {
   padding: 1em;
   font-size: 1rem;
   width: 100%;
+  transition: border 0.6s;
+  border-radius: 2px;
+  background-color: transparent;
+  border: 2px solid #404040;
+  color: #f2f2f2;
+}
+.footer .contact__input:focus {
+  border: 2px solid #f2f2f2;
+  outline: none;
+}
+.footer .contact__input-error {
+  border: 2px solid #fb3e1d;
+  color: #fb3e1d;
+}
+.footer .contact__input-error:focus {
+  border: 2px solid #fb3e1d;
+}
+.footer .contact__input-error::-moz-placeholder {
+  color: #fb3e1d;
+}
+.footer .contact__input-error::placeholder {
+  color: #fb3e1d;
+}
+.footer .contact__input-success {
+  border: 2px solid #20f255;
+  color: #20f255;
+}
+.footer .contact__input-success:focus {
+  border: 2px solid #20f255;
+}
+.footer .contact__input-success::-moz-placeholder {
+  color: #20f255;
+}
+.footer .contact__input-success::placeholder {
+  color: #20f255;
 }
 
 @media (max-width: 700px) and (max-height: 330px) {

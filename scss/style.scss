@@ -47,7 +47,7 @@ body {
 	border-radius: 2px;
 	transition: color 0.5s, background-color 0.5s, border 0.5s;
 	&:hover {
-		background-color: $darkblack;
+		background-color: transparent;
 		color: $white;
 		border: 2px solid $green;
 	}
@@ -362,11 +362,28 @@ body {
 	&__bottom {
 		margin: 2em 0 0 0;
 		font-size: 1.1rem;
-		// font-weight: 100;
 		font-family: 'Open Sans';
 		text-align: center;
 	}
 	.contact {
+		&__error {
+			opacity: 0;
+			display: flex;
+			align-items: center;
+			margin: 0.5em 0;
+			transition: opacity 0.2s;
+			&--active {
+				color: $error;
+				opacity: 1;
+			}
+			&--disabled {
+				color: $green;
+				opacity: 1;
+			}
+			&-img {
+				margin-right: 0.2em;
+			}
+		}
 		&__desc,
 		&__phone {
 			padding: 1em 0;
@@ -380,10 +397,39 @@ body {
 			color: $green;
 			font-weight: bold;
 		}
-		input {
+		&__input {
 			padding: 1em;
 			font-size: 1rem;
 			width: 100%;
+			transition: border 0.6s;
+			border-radius: 2px;
+			background-color: transparent;
+			border: 2px solid $gray;
+			color: $white;
+			&:focus {
+				border: 2px solid $white;
+				outline: none;
+			}
+			&-error {
+				border: 2px solid $error;
+				color: $error;
+				&:focus {
+					border: 2px solid $error;
+				}
+				&::placeholder {
+					color: $error;
+				}
+			}
+			&-success {
+				border: 2px solid $green;
+				color: $green;
+				&:focus {
+					border: 2px solid $green;
+				}
+				&::placeholder {
+					color: $green;
+				}
+			}
 		}
 	}
 }
