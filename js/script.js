@@ -1,3 +1,4 @@
+// Contact input validation
 const submitInput = document.querySelector('.contact__input')
 const submitBtn = document.querySelector('.btn--submit')
 const errorText = document.querySelector('.contact__error')
@@ -32,6 +33,7 @@ const sendInput = () => {
 }
 
 submitBtn.addEventListener('click', checkInput)
+// End of Contact input validation
 
 // Footer year
 const footerYear = document.querySelector('.footer__year')
@@ -41,3 +43,35 @@ const handleCurrentYear = () => {
 }
 handleCurrentYear()
 // End of Footer year
+
+// Statistics
+const elements = document.querySelectorAll('.statistics__card-percent')
+const targetValues = [50, 30, 90]
+const initialIntervals = [100, 200, 150]
+const stepValues = 1
+const accelerations = [0.95, 0.92, 0.94]
+
+elements.forEach((element, index) => {
+	let currentValue = 0
+	let interval = initialIntervals[index]
+	const targetValue = targetValues[index]
+	const stepValue = stepValues
+	const acceleration = accelerations[index]
+
+	function animate() {
+		currentValue += stepValue
+		element.textContent = currentValue + '%'
+
+		if (currentValue < targetValue) {
+			if (currentValue < targetValue / 2) {
+				interval *= acceleration
+			} else {
+				interval /= acceleration
+			}
+			interval = Math.max(interval, 10)
+			setTimeout(animate, interval)
+		}
+	}
+	animate()
+})
+// End of Statistics
