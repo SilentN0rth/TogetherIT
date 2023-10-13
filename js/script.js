@@ -1,3 +1,22 @@
+// Navigation
+const nav = document.querySelector('.nav')
+const navBurger = nav.querySelector('.nav__burger')
+const navItems = nav.querySelector('.nav__items')
+
+const toggleNav = () => {
+	nav.classList.toggle('nav--active')
+	navBurger.classList.toggle('nav__burger--active')
+}
+
+const hideNav = () => {
+	navBurger.classList.remove('nav__burger--active')
+	nav.classList.remove('nav--active')
+}
+
+navBurger.addEventListener('click', toggleNav)
+navItems.addEventListener('click', hideNav)
+// End of Navigation
+
 // Contact input validation
 const submitInput = document.querySelector('.contact__input')
 const submitBtn = document.querySelector('.btn--submit')

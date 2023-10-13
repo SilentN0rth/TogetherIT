@@ -22,12 +22,19 @@
 
 <body>
     <nav class="nav">
-        <div class="nav__items">
-            <a href="#" class="nav__item">1</a>
-            <a href="#" class="nav__item">2</a>
-            <a href="#" class="nav__item">3</a>
-            <a href="#" class="nav__item">4</a>
-            <a href="#" class="nav__item">5</a>
+        <div class="wrapper">
+            <button class="nav__burger">
+                <span class="nav__line"></span>
+                <span class="nav__line"></span>
+                <span class="nav__line"></span>
+            </button>
+            <div class="nav__items">
+                <a href="#advisory" class="nav__item">Advisory</a>
+                <a href="#offers" class="nav__item">Offers</a>
+                <a href="#team" class="nav__item">Team</a>
+                <a href="#statistics" class="nav__item">Statistics</a>
+                <a href="#contact" class="nav__item">Contact</a>
+            </div>
         </div>
     </nav>
     <header class="header">
@@ -358,14 +365,15 @@
                         sorting out different accounting intricacies or save the day before filing the taxes, they are
                         happy
                         indeed.</p>
+                    <p class="contact__error "><img class="contact__error-img" src="./img/icons/warning.svg"
+                            alt="">Enter a valid email address</p>
                     <div class="contact__fields">
                         <input class="contact__input" type="text" placeholder="Enter a vaild email address">
                         <button class="btn btn--submit">Submit</button>
                     </div>
-                    <p class="contact__error "><img class="contact__error-img" src="./img/icons/warning.svg"
-                            alt="">Enter a valid email address</p>
                 </div>
             </div>
+            <hr>
             <div class="footer__bottom">
                 <p class="footer__text">Cichy | Nicepage.com • &copy; <span class="footer__year"></span></p>
             </div>
