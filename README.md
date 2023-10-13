@@ -2,4 +2,4 @@ This website was created by me, based on a website builder (www.nicepage.com). T
 
 [Original website](https://nicepage.com/website-design/preview/together-we-go-to-the-goal-3754086?device=desktop)
 
-[Live view](https://silentn0rth.github.io/TogetherIT/)
+[Live preview](https://silentn0rth.github.io/TogetherIT/)
