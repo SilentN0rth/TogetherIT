@@ -272,17 +272,27 @@ body {
 				border-radius: 100%;
 			}
 			&-li {
+				color: $white;
 				display: flex;
 				align-items: center;
 			}
 			&--two {
 				color: $black;
 				background-color: $green;
-				.offers__card-li {
-					color: $white;
+				.offers__card {
+					&-line,
+					&-icon {
+						background-color: $black;
+					}
+					&-li {
+						color: $black;
+					}
 				}
 				.btn--offers {
+					background-color: transparent;
+					border: 2px solid $black;
 					&:hover {
+						background-color: $black;
 						border: 2px solid $white;
 					}
 				}
